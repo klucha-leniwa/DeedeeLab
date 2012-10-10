@@ -7,5 +7,3 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^my_site/', include('my_site.urls')),
 )
-
-
