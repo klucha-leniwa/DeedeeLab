@@ -1,0 +1,55 @@
+/* BODY */
+body {
+    width: 960px;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin: -16px auto;
+    padding: 0px;
+}
+
+/* HEADER */
+#header {
+    background-color: #D5D5D5;
+    height: 50px;
+    width: 960px;
+    margin: 0px;
+}
+
+/* NAVBAR_TOP
+1. a elements
+2. first li
+3. Second Level li
+*/
+
+#navbar_top {
+    margin: 0px auto;
+}
+
+.fixed {
+    position: fixed;
+    top: 0px;
+    margin: 0px auto;
+    background-color: #D5D5D5;
+    height: 50px;
+    width: 960px;
+}
+
+#navbar_top.fixed li {
+    position: relative;
+    top: -16px;
+} 
+#navbar_top a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#navbar_top li {
+    list-style: none;
+    display: inline-block;
+    padding: 15px;
+    float: right;
+}
+
+#navbar_top li > ul {
+    display: none;
+}

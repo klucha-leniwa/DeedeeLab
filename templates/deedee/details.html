@@ -1,0 +1,58 @@
+{% extends "deedee/base.html" %}
+
+{% block title %}
+    {{ post.post_title }}
+{% endblock %}
+
+{% block container %}
+
+    <div class = "details">
+                <h3> {{post.post_title}} </h3>
+                <span>
+                   {{ post.post_content}}
+                </span>
+    </div>
+
+    <div class = "comments">
+        {% if comments_for_post %}
+            {% for comment in comments_for_post %}
+                <div class = "comment">
+                    <h5> {{ comment.comment_title }} </h5>
+                    <span class = "comment"> {{ comment.comment_content }} </span>
+                    <p>
+                        {{ comment.comment_author }}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> No comments under this post </p>
+        {% endif %}
+    </div>
+
+    <div>
+        <form method="post" action=""> {% csrf_token %}
+             {{ form.title.errors }}
+             {{ form.errors }}
+             {{ form.non_field_errors }}
+             {% for field in form.visible_fields %}
+                {{ field.label_tag }} : {{ field }}
+             {% endfor %}
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <div class = "posts_nav" >
+        {% if previous|length > 0 %}
+            <p id="previous">
+                <a href="/my_site/posts/{{ previous.id }}" > <-- {{ previous.post_title }} </a>
+            </p>
+        {% endif %}
+
+        {% if next|length > 0 %}
+            <p id="next">
+                <a href="/my_site/posts/{{ next.id }}"/> {{ next.post_title }} --> </a>
+            </p>
+        {% endif %}
+
+    </div>
+{% endblock %}
