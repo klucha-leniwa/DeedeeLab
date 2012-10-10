@@ -72,7 +72,7 @@ def details(request, post_id):
                        'comments_for_post': comments_for_post,
                        'previous': previous_post,
                        'next': next_post,
-                       'form': form,
+                       'form': form
                       })
     return HttpResponse(template.render(context))
 
