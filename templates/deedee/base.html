@@ -9,7 +9,10 @@
     {% endblock %}
     </title>
     </head>
+
     <body>
+    {% block wrapper %}
+
     {% block header %}
     <div id="header">
         {% block navbar_top %}
@@ -17,33 +20,40 @@
             <ul>
                 <li>Categories
                     <ul>
-                       <li><a href="/my_site/category/liunx/">Linux Issues</a></li>
+                       <li><a href="/my_site/category/linux/">Linux Issues</a></li>
                        <li><a href="/my_site/catgeory/general_issues/">General Issues</a></li>
-                       <li><a href="/my_site/catgeory/webdevelopement/">Webdevelopment</a></li>
+                       <li><a href="/my_site/catgeory/webdevelopment/">Webdevelopment</a></li>
                        <li><a href="/my_site/catgeory/programming/">Programming Issues</a></li>
                     </ul>
                 </li>
-                <li><a href="/my_site/portfolio/">Portfolio</a></li>
-                <li><a href="/my_site/tools/">Usefull Tools</a>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Usefull Tools</a>
             </ul>
         </div>
         {% endblock %}
     </div>
     {% endblock %}
+
     <div id = "container">
     {% block container %}
+        <div class="clearfix">
+        </div>
     {% endblock %}
     </div>
 
-    <div id="footer">
     {% block footer %}
+        <div id="footer">
         <a href="/my_site/about/">You like what you seeing? Find out more!</a>
+        </div>
     {% endblock %}
-    </div>
+
     {% block scripts %}
     <div id="scripts">
         <script src="/static/js/jquery.js" type="text/javascript" ></script>
+        <script src="/static/js/active.js" type="text/javascript" ></script>
     </div>
+    {% endblock %}
+
     {% endblock %}
     </body>
 </html>

@@ -1,10 +1,14 @@
-/* BODY */
 body {
     width: 960px;
     background-color: #000000;
     color: #FFFFFF;
-    margin: -16px auto;
+    margin: 0px auto;
     padding: 0px;
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
 }
 
 #header {
@@ -14,60 +18,146 @@ body {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666666), color-stop(1, #000000));
     background-image: -webkit-linear-gradient(top, #666666 0%, #000000 100%);
     background-image: linear-gradient(to bottom, #666666 0%, #000000 100%);
+
     height: 50px;
     width: 960px;
     margin: 0px;
     position: fixed;
     top: 0px;
-    z-index: 999;
 }
 
-#navbar_top ul {
+#navbar_top > ul {
     margin: 0px;
 }
 
 #navbar_top li {
     list-style: none;
-    display: inline-block;
-    padding: 15px;
-    float: right;
+    display: block;
+    padding: 15px 50px;
 }
 
-#navbar_top li:hover {
+#navbar_top li:hover{
     background-color: #000000;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.active {
+    border: solid;
+    border-color: rgba(249, 199, 0, 0.3);
+    border-width: 0.5px;
+    padding: 11px;
+
+    box-shadow: 0px 0px 3px 3px #FCAB14 inset;
+
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+
 }
 
 #navbar_top a{
     color: #FFFFFF;
     text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+#navbar_top a:active {
+    outline: none;
+    -moz-outline-style: none;
+    text-decoration: none;
+    border:none;
+}
+
+#navbar_top a:focus {
+    outline: none;
+    -moz-outline-style: none;
+    text-decoration: none;
+    border:none;
+}
+
+#navbar_top > ul > li {
+    float: right;
 }
 
 #navbar_top li > ul {
-    display: none;
-}
+    right: -9999px;
+    position: absolute;
+    width: 140px;
+    top: 50px;
+    padding-top: 30px;
 
-#container {
-    margin-top: 100px !important;
-    margin: auto;
-}
-
-.pagination {
-    display: block;
-    margin-top: 100px;
-    text-align: center;
-}
-
-#footer {
     background-image: -ms-linear-gradient(bottom, #666666 0%, #000000 100%);
     background-image: -moz-linear-gradient(bottom, #666666 0%, #000000 100%);
     background-image: -o-linear-gradient(bottom, #666666 0%, #000000 100%);
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #666666), color-stop(1, #000000));
     background-image: -webkit-linear-gradient(bottom, #666666 0%, #000000 100%);
     background-image: linear-gradient(to top, #666666 0%, #000000 100%);
+
+    -webkit-border-bottom-left-radius: 9px;
+    -moz-border-radius-bottomleft: 9px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+
+    -webkit-border-top-left-radius: 9px;
+    -moz-border-radius-topleft: 9px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+#navbar_top li:hover > ul{
+    right: 0px;
+}
+
+#navbar_top li:active > ul {
+    right: 0px;
+}
+
+#navbar_top li:focus > ul {
+    right: 0px;
+}
+
+#navbar_top li > ul > li {
+    width: 185px;
+    border: none;
+    position: relative;
+    right: 42px;
+    padding: 0px;
+}
+
+#navbar_top li:hover > ul > li > a {
+    display: block;
+    height: 20px;
+    padding: 15px;
+}
+
+#container {
+    margin-top: 100px !important;
+    overflow: auto;
+    margin-bottom: -50px;
+    padding-bottom: 150px;
+}
+
+.pagination {
+    display: block;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#footer {
     clear:both;
     height: 50px;
     position: relative;
-    bottom: -70px;
+    margin-top: -50px;
+
+    background-image: -ms-linear-gradient(bottom, #666666 0%, #000000 100%);
+    background-image: -moz-linear-gradient(bottom, #666666 0%, #000000 100%);
+    background-image: -o-linear-gradient(bottom, #666666 0%, #000000 100%);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #666666), color-stop(1, #000000));
+    background-image: -webkit-linear-gradient(bottom, #666666 0%, #000000 100%);
+    background-image: linear-gradient(to top, #666666 0%, #000000 100%);
 }
 
 #footer a {
@@ -80,4 +170,5 @@ body {
     text-align: center;
     margin: auto;
     width: 139px;
+    z-index: 999;
 }
