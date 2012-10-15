@@ -3,7 +3,7 @@
 <html>
     <head>
     <link rel="stylesheet" href="/static/style.css" type="text/css" />
-    <title>
+    <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>    <title>
     {% block title %}
             Deedee Lab
     {% endblock %}
@@ -16,9 +16,10 @@
     {% block header %}
     <div id="header">
         {% block navbar_top %}
+        <a href="/my_site/index/"> <img src="/static/img/logo.png" alt="logo" id="logo" /> </a>
         <div id = "navbar_top" >
             <ul>
-                <li>Categories
+                <li><a href="/my_site/categories/">Categories</a>
                     <ul>
                        <li><a href="/my_site/category/linux/">Linux Issues</a></li>
                        <li><a href="/my_site/catgeory/general_issues/">General Issues</a></li>
