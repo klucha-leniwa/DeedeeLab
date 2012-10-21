@@ -42,6 +42,7 @@ a:focus {
     background-image: -webkit-linear-gradient(top, rgba(99, 99, 99, 1) 20%, rgba(0, 0, 0, 0.7) 90%);
     background-image: linear-gradient(to bottom, rgba(99, 99, 99, 1) 20%, rgba(0, 0, 0, 0.7) 90%);
 
+
     height: 80px;
     width: 960px;
     margin: 0px;
@@ -54,23 +55,18 @@ a:focus {
     height: 130px;
     position: absolute;
 }
-#navbar_top > ul {
+#navbar_top ul {
     margin: 0px;
 }
 
 #navbar_top li {
     list-style: none;
     display: block;
-    padding: 25px 53px;
 }
 
-#navbar_top li:hover{
-    background-color: #000000;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
+#navbar_top li:hover {
+    background: #000000;
 }
-
 .active {
     border: solid;
     border-color: rgba(249, 199, 0, 0.3);
@@ -87,25 +83,15 @@ a:focus {
     z-index: 99999;
 }
 
-#navbar_top a{
-    color: #FFFFFF;
-    text-decoration: none;
-    display: block;
-    white-space: nowrap;
+.hover {
+    background: #000000;
 }
 
-#navbar_top > ul > li {
-    float: right;
-    height: 30px;
-}
-
-#navbar_top li > ul {
-    right: -9999px;
+.toggle > ul{
     position: absolute;
     width: 154px;
-    top: 50px;
+    right: 0px;
     padding-top: 30px;
-
     background-image: -ms-linear-gradient(bottom, #666666 0%, #000000 100%);
     background-image: -moz-linear-gradient(bottom, #666666 0%, #000000 100%);
     background-image: -o-linear-gradient(bottom, #666666 0%, #000000 100%);
@@ -125,27 +111,15 @@ a:focus {
 
 }
 
-#navbar_top li:hover > ul{
-    right: 0px;
-}
-
-#navbar_top li:active > ul {
-    right: 0px;
-}
-
-#navbar_top li:focus > ul {
-    right: 0px;
-}
-
-#navbar_top li > ul > li {
-    width: 185px;
+.toggle > ul > li {
+    width: 163px;
     border: none;
     position: relative;
     right: 40px;
-    padding: 5px;
+    padding: 15px;
 }
 
-#navbar_top li > ul > li:hover {
+.toggle > ul > li:hover {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
@@ -154,12 +128,35 @@ a:focus {
     border-color: rgb(249, 199, 0);
     border-width: 1px;
 
-    padding: 4px;
+    background: #000000;
 }
-#navbar_top li:hover > ul > li > a {
+
+.toggle > ul > li:hover > a {
     display: block;
-    height: 20px;
-    padding: 15px;
+}
+
+#navbar_top > ul > li {
+    padding: 20px 53px;
+    float: right;
+    height: 30px;
+    border-right: solid;
+    border-right-width: 2px;
+    border-right-color: #636363;
+}
+
+#navbar_top a{
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.bullet {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 22px;
+    right: 17px;
 }
 
 #container {
