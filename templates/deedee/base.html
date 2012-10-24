@@ -20,8 +20,8 @@
         <a href="/my_site/index/"> <img src="/static/img/logo.png" alt="logo" id="logo" /> </a>
         <div id = "navbar_top" >
             <ul>
-                <li class="toggle"><a href="/my_site/categories/">Categories</a>
-                    <img src="/static/img/menu.png" alt="bullet" class="bullet" />
+                <li class="menu"><a href="#">Categories</a>
+                    <img src="/static/img/arrow_2.png" alt="dropdown" class="bullet" />
                     <ul>
                        <li><a href="/my_site/category/linux/">Linux Issues</a></li>
                        <li><a href="/my_site/catgeory/general_issues/">General Issues</a></li>
@@ -52,11 +52,10 @@
 
     {% block scripts %}
     <div id="scripts">
+        <script src="/static/js/jquery.js" type="text/javascript" ></script>
         <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js" type="text/javascript"></script>
-        <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript" ></script>
         <script src="/static/js/active.js" type="text/javascript" ></script>
-        <script src="/static/js/bullet.js" type="text/javascript" ></script>
-        <script src="/static/js/fold_menu.js" type="text/javascript" ></script>
+        <script src="/static/js/deedee.js" type="text/javascript" ></script>
     </div>
     {% endblock %}
 

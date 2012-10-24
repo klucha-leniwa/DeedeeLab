@@ -8,11 +8,13 @@
 
     <div class = "details">
                 <h3> {{post.post_title}} </h3>
+                <span class="created">{{ post.created_at }}</span><br/>
                 <span>
                    {{ post.post_content}}
                 </span>
     </div>
 
+    <img class="add" alt="Add Comment" src="/static/img/add.png" data-type="zoomin">
     <div class = "comments">
         {% if comments_for_post %}
             {% for comment in comments_for_post %}
@@ -25,20 +27,23 @@
                 </div>
             {% endfor %}
         {% else %}
-            <p> No comments under this post </p>
+            <span class="title"> No comments under this post </span>
         {% endif %}
     </div>
 
-    <div>
-        <form method="post" action=""> {% csrf_token %}
-             {{ form.title.errors }}
-             {{ form.errors }}
-             {{ form.non_field_errors }}
-             {% for field in form.visible_fields %}
-                {{ field.label_tag }} : {{ field }}
-             {% endfor %}
-            <input type="submit" value="Submit" />
-        </form>
+    <div class="overlay-container">
+        <div class="window-container zoomin">
+            <form method="post" action=""> {% csrf_token %}
+                 {{ form.title.errors }}
+                 {{ form.errors }}
+                 {{ form.non_field_errors }}
+                 {% for field in form.visible_fields %}
+                    {{ field.label_tag }} : {{ field }}
+                 {% endfor %}
+                <input type="submit" value="Submit" />
+            </form>
+            <span class="close">Close</span>
+        </div>
     </div>
 
     <div class = "posts_nav" >
