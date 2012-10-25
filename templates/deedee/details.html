@@ -6,28 +6,30 @@
 
 {% block container %}
 
-    <div class = "details">
+    <div class="details">
                 <h3> {{post.post_title}} </h3>
                 <span class="created">{{ post.created_at }}</span><br/>
-                <span>
+                <span class="details-post">
                    {{ post.post_content}}
                 </span>
     </div>
 
-    <img class="add" alt="Add Comment" src="/static/img/add.png" data-type="zoomin">
+    <p class="add">
+        Add comment for this post
+        <img class="add" alt="Add Comment" src="/static/img/add-violet.png" data-type="zoomin">
+    </p>
     <div class = "comments">
         {% if comments_for_post %}
             {% for comment in comments_for_post %}
                 <div class = "comment">
-                    <h5> {{ comment.comment_title }} </h5>
-                    <span class = "comment"> {{ comment.comment_content }} </span>
-                    <p>
+                    <span class = "comment-content"> {{ comment.comment_content }} </span>
+                    <p class="comment-author">
                         {{ comment.comment_author }}
                     </p>
                 </div>
             {% endfor %}
         {% else %}
-            <span class="title"> No comments under this post </span>
+            <span class="empty-comments"> No comments under this post </span>
         {% endif %}
     </div>
 
@@ -55,7 +57,7 @@
 
         {% if next|length > 0 %}
             <p id="next">
-                <a href="/my_site/posts/{{ next.id }}"/> {{ next.post_title }} --> </a>
+                <a href="/my_site/posts/{{ next.id }}"> {{ next.post_title }} --> </a>
             </p>
         {% endif %}
 

@@ -12,7 +12,12 @@
                     <span class="post_short">
                        {{ post.post_content|truncatechars:450 }}
                    </span>
-                   <span><a href="/my_site/posts/{{ post.id }}">More ...</a></span>
+                   <span class="link">
+                   <a href="/my_site/posts/{{ post.id }}" class="link">
+                       More ...
+                   </a>
+                   </span>
+                   <br/>
            </div>
 
         {% endfor %}

@@ -22,19 +22,33 @@ function foldMenu() {
 
 function modal(){
 
-    $('.add').on('click', function() {
+    $('img.add').on('click', function() {
         $('.overlay-container').fadeIn('100', function() {
             $('.window-container.zoomin').addClass('window-container-visible');
         });
+        $('body').scroll($('.window-container.zoomin'));
     });
 
     $('.close').click(function() {
-        $('.overlay-container').fadeOut().end().find('.window-container').removeClass('window-container-visible');
+        $('.overlay-container').fadeOut().end().find(
+            '.window-container'
+        ).removeClass('window-container-visible');
     });
 };
 
+function buttonEffect() {
+    $('img.add').hover(
+            function() {
+                $(this).animate({
+                    'top': '20px',
+            }, 150)}, function() {
+                $(this).animate({
+                    'top': '16px',
+            }, 150)}
+    )}
 function BundleAll() {
     $('.menu').children('ul').hide()
     foldMenu();
     modal();
+    buttonEffect();
 }
